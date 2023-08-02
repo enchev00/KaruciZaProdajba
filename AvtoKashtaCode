@@ -1,0 +1,39 @@
+using System.ComponentModel;
+using System.Linq;
+using System.Collections.Generic;
+using System.Linq.Expressions;
+
+internal class Program
+{
+    private static void Main(string[] args)
+    {
+        int daysStayed;
+        string modelCar;
+        double initialPrice;
+        double resellValue;
+        double profit;
+
+
+        Console.WriteLine("Enter model of the car");
+        modelCar = Console.ReadLine();
+        Console.WriteLine("Enter Initial price");
+        initialPrice = double.Parse(Console.ReadLine());
+        Console.WriteLine("Enter how many days the car stayed in the car dealership");
+        daysStayed = int.Parse(Console.ReadLine());
+
+        
+        //Presmqtane
+       
+        resellValue = initialPrice + (0.2 * initialPrice) + 275 + (20 * daysStayed);
+        profit = 0.15 * resellValue;
+        resellValue = resellValue + (0.15 * resellValue);
+
+       
+
+
+        //Output
+
+        Console.WriteLine("The " + modelCar + " with initial price of " + Math.Round(initialPrice,2)+ " BGN will sell for " + Math.Round(resellValue,2));
+        Console.WriteLine("Profit: " + Math.Round(profit,2)+ " BGN");
+    }
+}
